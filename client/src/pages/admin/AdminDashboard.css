@@ -1,0 +1,70 @@
+.dashboard h1{
+  margin-bottom:30px;
+  font-size: 20px;
+    font-weight: bold;
+}
+
+/* Cards layout */
+
+.dashboard-cards{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+/* Card */
+
+.card{
+  background:white;
+  padding:25px;
+  width:200px;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.08);
+}
+
+.card h3{
+  margin-bottom:10px;
+  font-size:18px;
+}
+
+.card p{
+  font-size:22px;
+  font-weight:bold;
+}
+
+
+/* ======================= */
+/* Responsive */
+/* ======================= */
+
+@media (max-width:1024px){
+
+  .dashboard-cards{
+    justify-content:flex-start;
+  }
+
+}
+
+
+@media (max-width:768px){
+
+  .dashboard-cards{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+  }
+
+  .card{
+    width:100%;
+  }
+
+}
+
+
+@media (max-width:480px){
+
+  .dashboard-cards{
+    grid-template-columns:1fr;
+  }
+
+}

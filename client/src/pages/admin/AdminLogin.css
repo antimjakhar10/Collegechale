@@ -1,0 +1,127 @@
+.login-wrapper{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#f4f6f9;
+font-family:sans-serif;
+padding:20px;
+box-sizing:border-box;
+}
+
+/* Login Box */
+
+.login-box{
+width:100%;
+max-width:380px;
+background:white;
+padding:40px;
+border-radius:10px;
+box-shadow:0 8px 30px rgba(0,0,0,0.08);
+}
+
+/* Title */
+
+.login-box h2{
+margin-bottom:5px;
+font-size:22px;
+color:#111;
+}
+
+.subtitle{
+font-size:14px;
+color:#666;
+margin-bottom:25px;
+}
+
+/* Labels */
+
+.login-box label{
+font-size:13px;
+color:#444;
+display:block;
+margin-bottom:5px;
+margin-top:12px;
+}
+
+/* Inputs */
+
+.login-box input{
+width:100%;
+padding:10px;
+border:1px solid #ddd;
+border-radius:6px;
+font-size:14px;
+box-sizing:border-box;
+}
+
+.login-box input:focus{
+outline:none;
+border-color:#2563eb;
+}
+
+/* Button */
+
+.login-box button{
+margin-top:20px;
+width:100%;
+padding:11px;
+background:#2563eb;
+color:white;
+border:none;
+border-radius:6px;
+font-size:14px;
+cursor:pointer;
+transition:0.2s;
+}
+
+.login-box button:hover{
+background:#1d4ed8;
+}
+
+
+/* ================= */
+/* Tablet */
+/* ================= */
+
+@media (max-width:768px){
+
+.login-box{
+padding:30px;
+}
+
+.login-box h2{
+font-size:20px;
+}
+
+.subtitle{
+font-size:13px;
+}
+
+}
+
+/* ================= */
+/* Mobile */
+/* ================= */
+
+@media (max-width:480px){
+
+.login-box{
+padding:25px;
+}
+
+.login-box h2{
+font-size:18px;
+}
+
+.login-box input{
+padding:8px;
+font-size:13px;
+}
+
+.login-box button{
+padding:10px;
+font-size:13px;
+}
+
+}

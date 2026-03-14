@@ -1,0 +1,126 @@
+.admin-college-list{
+padding:30px;
+width:100%;
+box-sizing:border-box;
+}
+
+/* Title */
+
+.admin-college-list h1{
+margin-bottom:20px;
+}
+
+/* Search */
+
+.search-input{
+padding:8px 12px;
+border:1px solid #ccc;
+border-radius:6px;
+margin-bottom:20px;
+width:250px;
+max-width:100%;
+}
+
+/* Table wrapper (IMPORTANT) */
+
+.admin-college-list{
+overflow-x:hidden;
+}
+
+.table-wrapper{
+width:100%;
+overflow-x:auto;
+}
+
+/* Table */
+
+.college-table{
+width:100%;
+border-collapse:collapse;
+background:white;
+border-radius:10px;
+min-width:800px; /* scroll trigger */
+}
+
+/* Header */
+
+.college-table th{
+background:#0f172a;
+color:white;
+padding:12px;
+text-align:left;
+white-space:nowrap;
+}
+
+/* Cells */
+
+.college-table td{
+padding:12px;
+border-bottom:1px solid #eee;
+white-space:nowrap;
+}
+
+/* Image */
+
+.college-img{
+width:60px;
+height:40px;
+object-fit:cover;
+border-radius:5px;
+}
+
+/* Buttons */
+
+.action-buttons{
+display:flex;
+gap:10px;
+align-items:center;
+}
+
+.edit-btn,
+.delete-btn{
+border:none;
+padding:7px 10px;
+border-radius:6px;
+cursor:pointer;
+font-size:14px;
+}
+
+.edit-btn{
+background:#22c55e;
+color:white;
+}
+
+.delete-btn{
+background:#ef4444;
+color:white;
+}
+
+/* ================= */
+/* Mobile */
+/* ================= */
+
+@media (max-width:768px){
+
+.admin-college-list{
+padding:20px;
+}
+
+.search-input{
+width:100%;
+}
+
+.college-img{
+width:50px;
+height:35px;
+}
+
+}
+
+@media (max-width:480px){
+
+.admin-college-list{
+padding:15px;
+}
+
+}

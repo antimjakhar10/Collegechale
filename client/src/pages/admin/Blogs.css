@@ -1,0 +1,259 @@
+.blogs-page{
+padding:30px;
+width:100%;
+box-sizing:border-box;
+}
+
+/* Header */
+
+.blogs-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:20px;
+flex-wrap:wrap;
+gap:10px;
+}
+
+.blogs-header h1 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.blog-actions{
+display:flex;
+align-items:center;
+gap:12px;
+flex-wrap:wrap;
+}
+
+/* Search */
+
+.blog-search{
+padding:10px 14px;
+border:1px solid #ddd;
+border-radius:6px;
+width:200px;
+max-width:100%;
+}
+
+/* Add button */
+
+.add-blog-btn{
+background:#6366f1;
+color:white;
+border:none;
+padding:10px 16px;
+border-radius:6px;
+cursor:pointer;
+font-weight:500;
+}
+
+.add-blog-btn:hover{
+background:#4f46e5;
+}
+
+/* Table container */
+
+.blogs-table{
+background:white;
+padding:20px;
+border-radius:10px;
+overflow-x:auto;
+}
+
+/* Table */
+
+table{
+width:100%;
+border-collapse:collapse;
+min-width:650px; /* mobile scroll trigger */
+}
+
+th,td{
+padding:12px;
+border-bottom:1px solid #eee;
+text-align:left;
+white-space:nowrap;
+}
+
+/* Image */
+
+.blog-img{
+width:80px;
+height:50px;
+object-fit:cover;
+border-radius:4px;
+}
+
+/* Buttons */
+
+.blogs-page .edit-btn{
+background:#22c55e;
+border:none;
+padding:6px 8px;
+border-radius:6px;
+color:white;
+cursor:pointer;
+}
+
+.blogs-page .delete-btn{
+background:#ef4444;
+border:none;
+padding:6px 8px;
+border-radius:6px;
+color:white;
+cursor:pointer;
+}
+
+/* Pagination */
+
+.pagination{
+margin-top:20px;
+display:flex;
+gap:10px;
+justify-content:flex-end;
+flex-wrap:wrap;
+}
+
+.pagination button{
+padding:6px 14px;
+border:none;
+background:#6366f1;
+color:white;
+border-radius:6px;
+cursor:pointer;
+}
+
+.pagination button:disabled{
+background:#ccc;
+cursor:not-allowed;
+}
+
+.status{
+padding:4px 10px;
+border-radius:6px;
+font-size:12px;
+text-transform:capitalize;
+}
+
+.status.pending{
+background:#fff3cd;
+color:#856404;
+}
+
+.status.approved{
+background:#d4edda;
+color:#155724;
+}
+
+.status.rejected{
+background:#f8d7da;
+color:#721c24;
+}
+
+.approve-btn{
+background:#28a745;
+color:white;
+border:none;
+padding:5px 10px;
+margin-right:5px;
+cursor:pointer;
+}
+
+.reject-btn{
+background:#dc3545;
+color:white;
+border:none;
+padding:5px 10px;
+cursor:pointer;
+}
+
+.blog-status-filter{
+padding:6px;
+margin-left:10px;
+border-radius:6px;
+border:1px solid #ccc;
+}
+
+.status{
+padding:4px 10px;
+border-radius:6px;
+font-size:12px;
+text-transform:capitalize;
+}
+
+.status.pending{
+background:#fff3cd;
+color:#856404;
+}
+
+.status.approved{
+background:#d4edda;
+color:#155724;
+}
+
+.status.rejected{
+background:#f8d7da;
+color:#721c24;
+}
+
+/* ================= */
+/* Tablet */
+/* ================= */
+
+@media (max-width:900px){
+
+.blogs-page{
+padding:20px;
+}
+
+.blog-search{
+width:180px;
+}
+
+}
+
+/* ================= */
+/* Mobile */
+/* ================= */
+
+@media (max-width:768px){
+
+.blogs-page{
+padding:18px;
+}
+
+.blogs-header{
+flex-direction:column;
+align-items:flex-start;
+}
+
+.blog-actions{
+width:100%;
+justify-content:space-between;
+}
+
+.blog-search{
+width:100%;
+}
+
+.blog-img{
+width:60px;
+height:40px;
+}
+
+}
+
+@media (max-width:480px){
+
+.blogs-page{
+padding:15px;
+}
+
+.blog-img{
+width:50px;
+height:35px;
+}
+
+}

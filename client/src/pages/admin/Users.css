@@ -1,0 +1,153 @@
+.users-page{
+padding:30px;
+width:100%;
+box-sizing:border-box;
+}
+
+/* Header */
+
+.users-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:20px;
+flex-wrap:wrap;
+gap:10px;
+}
+
+.users-header h1{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.users-actions{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+}
+
+/* Search */
+
+.users-actions input{
+padding:8px 12px;
+border:1px solid #ddd;
+border-radius:6px;
+width:200px;
+max-width:100%;
+}
+
+/* Add Button */
+
+.add-user-btn{
+background:#6366f1;
+color:white;
+border:none;
+padding:8px 16px;
+border-radius:6px;
+cursor:pointer;
+}
+
+.add-user-btn:hover{
+background:#4f46e5;
+}
+
+/* Table Card */
+
+.users-table-card{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.05);
+overflow-x:auto;
+}
+
+/* Table */
+
+table{
+width:100%;
+border-collapse:collapse;
+min-width:650px; /* mobile scroll */
+}
+
+th,td{
+padding:12px;
+border-bottom:1px solid #eee;
+text-align:left;
+white-space:nowrap;
+}
+
+/* Report button */
+
+.report-btn{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:6px;
+background:#fde2e4;
+color:#e63946;
+border:none;
+border-radius:20px;
+padding:6px 14px;
+font-size:14px;
+cursor:pointer;
+}
+
+.report-btn svg{
+font-size:14px;
+}
+
+/* Delete */
+
+.delete-btn{
+display:flex;
+align-items:center;
+justify-content:center;
+background:#fee2e2;
+color:#ef4444;
+border:none;
+border-radius:6px;
+padding:8px;
+cursor:pointer;
+}
+
+/* ================= */
+/* Tablet */
+/* ================= */
+
+@media (max-width:900px){
+
+.users-page{
+padding:20px;
+}
+
+}
+
+/* ================= */
+/* Mobile */
+/* ================= */
+
+@media (max-width:768px){
+
+.users-header{
+flex-direction:column;
+align-items:flex-start;
+}
+
+.users-actions{
+width:100%;
+justify-content:space-between;
+}
+
+.users-actions input{
+width:100%;
+}
+
+}
+
+@media (max-width:480px){
+
+.users-page{
+padding:15px;
+}
+
+}
