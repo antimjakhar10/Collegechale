@@ -32,17 +32,17 @@ const UniversityList = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://collegechale.onrender.com/api/courses")
+    fetch("https://collegechale.onrender.com/api/courses")
       .then((res) => res.json())
       .then((data) => setCourses(data));
 
-    fetch("http://collegechale.onrender.com/api/streams")
+    fetch("https://collegechale.onrender.com/api/streams")
       .then((res) => res.json())
       .then((data) => setStreams(data));
   }, []);
 
   useEffect(() => {
-    fetch("http://collegechale.onrender.com/api/colleges")
+    fetch("https://collegechale.onrender.com/api/colleges")
       .then((res) => res.json())
       .then((data) => {
         setUniversities(data);

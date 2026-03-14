@@ -26,7 +26,7 @@ const CollegeDetails = () => {
 
 const user = JSON.parse(localStorage.getItem("user"));
 
-await fetch("http://collegechale.onrender.com/api/enquiries/add", {
+await fetch("https://collegechale.onrender.com/api/enquiries/add", {
 method:"POST",
 headers:{
 "Content-Type":"application/json"
@@ -43,7 +43,7 @@ alert("Application submitted successfully");
 };
 
   useEffect(() => {
-    fetch("http://collegechale.onrender.com/api/colleges")
+    fetch("https://collegechale.onrender.com/api/colleges")
       .then((res) => res.json())
       .then((data) => {
         const foundCollege = data.find(
@@ -67,7 +67,7 @@ alert("Application submitted successfully");
           backgroundImage: `url(${
             college.images?.[0]?.startsWith("/uploads")
               ? `http://collegechale.onrender.com${college.images[0]}`
-              : `http://collegechale.onrender.com/uploads/${college.images[0]}`
+              : `https://collegechale.onrender.com/uploads/${college.images[0]}`
           })`,
         }}
       >
@@ -124,7 +124,7 @@ alert("Application submitted successfully");
               src={
                 activeImage.startsWith("/uploads")
                   ? `http://collegechale.onrender.com${activeImage}`
-                  : `http://collegechale.onrender.com/uploads/${activeImage}`
+                  : `https://collegechale.onrender.com/uploads/${activeImage}`
               }
               alt="college"
               className="w-full h-[220px] sm:h-[300px] md:h-[380px] object-cover rounded-lg"
@@ -139,7 +139,7 @@ alert("Application submitted successfully");
                 src={
                   img.startsWith("/uploads")
                     ? `http://collegechale.onrender.com${img}`
-                    : `http://collegechale.onrender.com/uploads/${img}`
+                    : `https://collegechale.onrender.com/uploads/${img}`
                 }
                 onClick={() => setActiveImage(img)}
                 className={`w-16 md:w-24 h-16 md:h-20 object-contain border rounded-lg cursor-pointer

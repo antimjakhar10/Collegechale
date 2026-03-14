@@ -12,7 +12,7 @@ const user = JSON.parse(localStorage.getItem("user"));
 
 if (!user) return;
 
-fetch(`http://collegechale.onrender.com/api/saved/user/${user.id}`)
+fetch(`https://collegechale.onrender.com/api/saved/user/${user.id}`)
 .then(res => res.json())
 .then(data => setColleges(data));
 
@@ -38,7 +38,7 @@ Saved Colleges
 
 const imageUrl = c.image?.startsWith("/uploads")
 ? `http://collegechale.onrender.com${c.image}`
-: `http://collegechale.onrender.com/uploads/${c.image}`;
+: `https://collegechale.onrender.com/uploads/${c.image}`;
 
 return (
 

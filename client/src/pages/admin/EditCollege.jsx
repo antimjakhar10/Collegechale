@@ -40,22 +40,22 @@ images: [],
   }, []);
 
   const fetchStreams = async () => {
-    const res = await axios.get("http://collegechale.onrender.com/api/streams");
+    const res = await axios.get("https://collegechale.onrender.com/api/streams");
     setStreams(res.data);
   };
 
   const fetchCourses = async () => {
-    const res = await axios.get("http://collegechale.onrender.com/api/courses");
+    const res = await axios.get("https://collegechale.onrender.com/api/courses");
     setCourses(res.data);
   };
 
   const fetchFacilities = async () => {
-    const res = await axios.get("http://collegechale.onrender.com/api/facilities");
+    const res = await axios.get("https://collegechale.onrender.com/api/facilities");
     setFacilities(res.data);
   };
 
   const fetchPlacements = async () => {
-    const res = await axios.get("http://collegechale.onrender.com/api/placements");
+    const res = await axios.get("https://collegechale.onrender.com/api/placements");
     setPlacements(res.data);
   };
 
@@ -113,7 +113,7 @@ streams: [...college.streams, stream]
 
   const fetchCollege = async () => {
     try {
-      const res = await axios.get(`http://collegechale.onrender.com/api/colleges/${id}`);
+      const res = await axios.get(`https://collegechale.onrender.com/api/colleges/${id}`);
 
       const found = res.data;
 
@@ -236,7 +236,7 @@ images: college.images
 
 console.log("DATA SENT:", formattedData);
 
-await axios.put(`http://collegechale.onrender.com/api/colleges/${id}`, formattedData);
+await axios.put(`https://collegechale.onrender.com/api/colleges/${id}`, formattedData);
 
 alert("University updated successfully");
 
@@ -296,7 +296,7 @@ onChange={handleChange}
       src={
 college.image?.startsWith("/uploads")
 ? `http://collegechale.onrender.com${college.image}`
-: `http://collegechale.onrender.com/uploads/${college.image}`
+: `https://collegechale.onrender.com/uploads/${college.image}`
 }
       className="logo-preview"
     />
@@ -360,7 +360,7 @@ college.images.map((img,index)=>(
 src={
 img.startsWith("/uploads")
 ? `http://collegechale.onrender.com${img}`
-: `http://collegechale.onrender.com/uploads/${img}`
+: `https://collegechale.onrender.com/uploads/${img}`
 }
 className="gallery-img"
 />
@@ -416,7 +416,7 @@ const name = prompt("Enter Stream Name");
 
 if(!name) return;
 
-await axios.post("http://collegechale.onrender.com/api/streams/add",{name});
+await axios.post("https://collegechale.onrender.com/api/streams/add",{name});
 
 fetchStreams();
 
@@ -458,7 +458,7 @@ const newName = prompt("Edit Stream",stream.name);
 
 if(!newName) return;
 
-await axios.put(`http://collegechale.onrender.com/api/streams/${stream._id}`,{
+await axios.put(`https://collegechale.onrender.com/api/streams/${stream._id}`,{
 name:newName
 });
 
@@ -476,7 +476,7 @@ onClick={async()=>{
 
 if(!window.confirm("Delete Stream?")) return;
 
-await axios.delete(`http://collegechale.onrender.com/api/streams/${stream._id}`);
+await axios.delete(`https://collegechale.onrender.com/api/streams/${stream._id}`);
 
 fetchStreams();
 
@@ -520,7 +520,7 @@ const name = prompt("Enter Course Name");
 
 if(!name) return;
 
-await axios.post("http://collegechale.onrender.com/api/courses/add",{name});
+await axios.post("https://collegechale.onrender.com/api/courses/add",{name});
 
 fetchCourses();
 
@@ -562,7 +562,7 @@ const newName = prompt("Edit Course",course.name);
 
 if(!newName) return;
 
-await axios.put(`http://collegechale.onrender.com/api/courses/${course._id}`,{
+await axios.put(`https://collegechale.onrender.com/api/courses/${course._id}`,{
 name:newName
 });
 
@@ -580,7 +580,7 @@ onClick={async()=>{
 
 if(!window.confirm("Delete Course?")) return;
 
-await axios.delete(`http://collegechale.onrender.com/api/courses/${course._id}`);
+await axios.delete(`https://collegechale.onrender.com/api/courses/${course._id}`);
 
 fetchCourses();
 
@@ -625,7 +625,7 @@ const name = prompt("Enter Facility Name");
 
 if(!name) return;
 
-await axios.post("http://collegechale.onrender.com/api/facilities/add",{name});
+await axios.post("https://collegechale.onrender.com/api/facilities/add",{name});
 
 fetchFacilities();
 
@@ -667,7 +667,7 @@ const newName = prompt("Edit Facility",facility.name);
 
 if(!newName) return;
 
-await axios.put(`http://collegechale.onrender.com/api/facilities/${facility._id}`,{
+await axios.put(`https://collegechale.onrender.com/api/facilities/${facility._id}`,{
 name:newName
 });
 
@@ -685,7 +685,7 @@ onClick={async()=>{
 
 if(!window.confirm("Delete Facility?")) return;
 
-await axios.delete(`http://collegechale.onrender.com/api/facilities/${facility._id}`);
+await axios.delete(`https://collegechale.onrender.com/api/facilities/${facility._id}`);
 
 fetchFacilities();
 
@@ -748,7 +748,7 @@ const uploadRes = await axios.post("http://collegechale.onrender.com/upload", fo
 
 const logo = uploadRes.data.image;
 
-await axios.post("http://collegechale.onrender.com/api/placements/add",{
+await axios.post("https://collegechale.onrender.com/api/placements/add",{
 name,
 avgPackage,
 highestPackage,
@@ -827,7 +827,7 @@ logo = uploadRes.data.image;
 
 }
 
-await axios.put(`http://collegechale.onrender.com/api/placements/${placement._id}`,{
+await axios.put(`https://collegechale.onrender.com/api/placements/${placement._id}`,{
 name,
 avgPackage,
 highestPackage,
@@ -852,7 +852,7 @@ onClick={async()=>{
 
 if(!window.confirm("Delete Company?")) return;
 
-await axios.delete(`http://collegechale.onrender.com/api/placements/${placement._id}`);
+await axios.delete(`https://collegechale.onrender.com/api/placements/${placement._id}`);
 
 fetchPlacements();
 

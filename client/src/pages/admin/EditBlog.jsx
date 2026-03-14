@@ -31,7 +31,7 @@ return text
 // fetch blog data
 const fetchBlog = async()=>{
 
-const res = await axios.get(`http://collegechale.onrender.com/api/blogs/${id}`);
+const res = await axios.get(`https://collegechale.onrender.com/api/blogs/${id}`);
 
 setTitle(res.data.title);
 setSlug(res.data.slug);
@@ -72,7 +72,7 @@ const updateBlog = async(e)=>{
 
 e.preventDefault();
 
-await axios.put(`http://collegechale.onrender.com/api/blogs/${id}`,{
+await axios.put(`https://collegechale.onrender.com/api/blogs/${id}`,{
 
 title,
 slug,

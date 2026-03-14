@@ -12,7 +12,7 @@ const [loading,setLoading] = useState(true);
 useEffect(()=>{
 
 axios
-.get("http://collegechale.onrender.com/api/bloguser/approved")
+.get("https://collegechale.onrender.com/api/bloguser/approved")
 .then(res=>{
 setBlogs(res.data);
 setLoading(false);

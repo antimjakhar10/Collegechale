@@ -13,7 +13,7 @@ fetchEnquiries();
 const fetchEnquiries = async () => {
 
 const res = await axios.get(
-"http://collegechale.onrender.com/api/enquiries"
+"https://collegechale.onrender.com/api/enquiries"
 );
 
 setEnquiries(res.data);
@@ -27,7 +27,7 @@ const confirmDelete = window.confirm("Delete this enquiry?");
 if(!confirmDelete) return;
 
 await axios.delete(
-`http://collegechale.onrender.com/api/enquiries/${id}`
+`https://collegechale.onrender.com/api/enquiries/${id}`
 );
 
 fetchEnquiries();

@@ -24,7 +24,7 @@ const filteredUniversities =
 
 
   useEffect(() => {
-    fetch("http://collegechale.onrender.com/api/colleges")
+    fetch("https://collegechale.onrender.com/api/colleges")
       .then((res) => res.json())
       .then((data) => setColleges(data));
   }, []);
@@ -75,7 +75,7 @@ const filteredUniversities =
                   src={
                     uni.image.startsWith("/uploads")
                       ? `http://collegechale.onrender.com${uni.image}`
-                      : `http://collegechale.onrender.com/uploads/${uni.image}`
+                      : `https://collegechale.onrender.com/uploads/${uni.image}`
                   }
                   alt={uni.name}
                   className="h-28 object-contain mb-4 mx-auto"

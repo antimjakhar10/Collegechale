@@ -39,7 +39,7 @@ alert("Please login first");
 return;
 }
 
-await axios.post("http://collegechale.onrender.com/api/blogs/add",{
+await axios.post("https://collegechale.onrender.com/api/blogs/add",{
 
 title,
 slug:title.toLowerCase().replace(/ /g,"-"),

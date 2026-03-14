@@ -11,7 +11,7 @@ const [blog,setBlog] = useState(null);
 useEffect(()=>{
 
 axios
-.get("http://collegechale.onrender.com/api/blogs")
+.get("https://collegechale.onrender.com/api/blogs")
 .then(res=>{
 
 const found = res.data.find(b => b.slug === slug);

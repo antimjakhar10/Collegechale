@@ -39,7 +39,7 @@ const paginatedBlogs = filteredBlogs.slice(start,start+limit);
 // fetch blogs
 const fetchBlogs = async ()=>{
 
-const res = await axios.get("http://collegechale.onrender.com/api/blogs");
+const res = await axios.get("https://collegechale.onrender.com/api/blogs");
 
 setBlogs(res.data);
 
@@ -54,7 +54,7 @@ fetchBlogs();
 // delete blog
 const deleteBlog = async(id)=>{
 
-await axios.delete(`http://collegechale.onrender.com/api/blogs/${id}`);
+await axios.delete(`https://collegechale.onrender.com/api/blogs/${id}`);
 
 fetchBlogs();
 
@@ -64,7 +64,7 @@ fetchBlogs();
 // approve blog
 const approveBlog = async(id)=>{
 
-await axios.put(`http://collegechale.onrender.com/api/blogs/approve/${id}`);
+await axios.put(`https://collegechale.onrender.com/api/blogs/approve/${id}`);
 
 fetchBlogs();
 
@@ -74,7 +74,7 @@ fetchBlogs();
 // reject blog
 const rejectBlog = async(id)=>{
 
-await axios.put(`http://collegechale.onrender.com/api/blogs/reject/${id}`);
+await axios.put(`https://collegechale.onrender.com/api/blogs/reject/${id}`);
 
 fetchBlogs();
 

@@ -17,7 +17,7 @@ e.preventDefault();
 try{
 
 await axios.post(
-"http://collegechale.onrender.com/api/auth/register",
+"https://collegechale.onrender.com/api/auth/register",
 {name,email,password}
 );
 

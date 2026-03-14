@@ -44,7 +44,7 @@ const addBlog = async(e)=>{
 
 e.preventDefault();
 
-await axios.post("http://collegechale.onrender.com/api/blogs/add",{
+await axios.post("https://collegechale.onrender.com/api/blogs/add",{
 
 title,
 slug,

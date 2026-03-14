@@ -8,7 +8,7 @@ const navigate = useNavigate();
 const imageUrl = uni.image
 ? uni.image.startsWith("/uploads")
   ? `http://collegechale.onrender.com${uni.image}`
-  : `http://collegechale.onrender.com/uploads/${uni.image}`
+  : `https://collegechale.onrender.com/uploads/${uni.image}`
 : "https://via.placeholder.com/80";
 
 return (
@@ -84,7 +84,7 @@ alert("Login first");
 return;
 }
 
-await fetch("http://collegechale.onrender.com/api/saved/save",{
+await fetch("https://collegechale.onrender.com/api/saved/save",{
 
 method:"POST",
 headers:{
