@@ -24,6 +24,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("CollegeChale Backend Running 🚀");
+});
+
 const storage = multer.diskStorage({
 destination:"uploads/",
 filename:(req,file,cb)=>{
