@@ -14,7 +14,7 @@ setLoading(false);
 return;
 }
 
-fetch(`http://localhost:5000/api/blogs/user/${user.id}`)
+fetch(`http://collegechale.onrender.com/api/blogs/user/${user.id}`)
 .then(res=>res.json())
 .then(data=>{
 setBlogs(data);

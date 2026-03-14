@@ -20,7 +20,7 @@ const formData = new FormData();
 
 formData.append("image",file);
 
-const res = await axios.post("http://localhost:5000/upload",formData);
+const res = await axios.post("http://collegechale.onrender.com/upload",formData);
 
 console.log(res.data);   // ⭐ check here
 
@@ -39,7 +39,7 @@ alert("Please login first");
 return;
 }
 
-await axios.post("http://localhost:5000/api/blogs/add",{
+await axios.post("http://collegechale.onrender.com/api/blogs/add",{
 
 title,
 slug:title.toLowerCase().replace(/ /g,"-"),

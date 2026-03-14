@@ -15,7 +15,7 @@ function Categories() {
   // Fetch categories
   const fetchCategories = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/categories");
+      const res = await axios.get("http://collegechale.onrender.com/api/categories");
       setCategories(res.data);
     } catch (error) {
       console.log(error);
@@ -34,7 +34,7 @@ function Categories() {
     }
 
     try {
-      await axios.post("http://localhost:5000/api/categories/add", {
+      await axios.post("http://collegechale.onrender.com/api/categories/add", {
         name,
         slug,
       });
@@ -51,7 +51,7 @@ function Categories() {
   // UPDATE CATEGORY
   const updateCategory = async () => {
     try {
-      await axios.put(`http://localhost:5000/api/categories/${editId}`, {
+      await axios.put(`http://collegechale.onrender.com/api/categories/${editId}`, {
         name,
         slug,
       });
@@ -68,7 +68,7 @@ function Categories() {
 
   // DELETE CATEGORY
   const deleteCategory = async (id) => {
-    await axios.delete(`http://localhost:5000/api/categories/${id}`);
+    await axios.delete(`http://collegechale.onrender.com/api/categories/${id}`);
     fetchCategories();
   };
 

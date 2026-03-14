@@ -26,7 +26,7 @@ const CollegeDetails = () => {
 
 const user = JSON.parse(localStorage.getItem("user"));
 
-await fetch("http://localhost:5000/api/enquiries/add", {
+await fetch("http://collegechale.onrender.com/api/enquiries/add", {
 method:"POST",
 headers:{
 "Content-Type":"application/json"
@@ -43,7 +43,7 @@ alert("Application submitted successfully");
 };
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/colleges")
+    fetch("http://collegechale.onrender.com/api/colleges")
       .then((res) => res.json())
       .then((data) => {
         const foundCollege = data.find(
@@ -66,8 +66,8 @@ alert("Application submitted successfully");
         style={{
           backgroundImage: `url(${
             college.images?.[0]?.startsWith("/uploads")
-              ? `http://localhost:5000${college.images[0]}`
-              : `http://localhost:5000/uploads/${college.images[0]}`
+              ? `http://collegechale.onrender.com${college.images[0]}`
+              : `http://collegechale.onrender.com/uploads/${college.images[0]}`
           })`,
         }}
       >
@@ -123,8 +123,8 @@ alert("Application submitted successfully");
             <img
               src={
                 activeImage.startsWith("/uploads")
-                  ? `http://localhost:5000${activeImage}`
-                  : `http://localhost:5000/uploads/${activeImage}`
+                  ? `http://collegechale.onrender.com${activeImage}`
+                  : `http://collegechale.onrender.com/uploads/${activeImage}`
               }
               alt="college"
               className="w-full h-[220px] sm:h-[300px] md:h-[380px] object-cover rounded-lg"
@@ -138,8 +138,8 @@ alert("Application submitted successfully");
                 key={index}
                 src={
                   img.startsWith("/uploads")
-                    ? `http://localhost:5000${img}`
-                    : `http://localhost:5000/uploads/${img}`
+                    ? `http://collegechale.onrender.com${img}`
+                    : `http://collegechale.onrender.com/uploads/${img}`
                 }
                 onClick={() => setActiveImage(img)}
                 className={`w-16 md:w-24 h-16 md:h-20 object-contain border rounded-lg cursor-pointer
@@ -218,7 +218,7 @@ key={index}
 className="bg-white border rounded-lg px-4 py-2 flex items-center shadow-sm"
 >
 <img
-src={`http://localhost:5000${company.logo}`}
+src={`http://collegechale.onrender.com${company.logo}`}
 alt={company.name}
 className="h-8 object-contain"
 />

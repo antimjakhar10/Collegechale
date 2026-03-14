@@ -32,7 +32,7 @@ const formData = new FormData();
 
 formData.append("image",file);
 
-const res = await axios.post("http://localhost:5000/upload",formData);
+const res = await axios.post("http://collegechale.onrender.com/upload",formData);
 
 setImage(res.data.image);
 
@@ -44,7 +44,7 @@ const addBlog = async(e)=>{
 
 e.preventDefault();
 
-await axios.post("http://localhost:5000/api/blogs/add",{
+await axios.post("http://collegechale.onrender.com/api/blogs/add",{
 
 title,
 slug,

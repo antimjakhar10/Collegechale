@@ -13,7 +13,7 @@ function AdminCollegeList() {
   }, []);
 
   const fetchColleges = async () => {
-    const res = await axios.get("http://localhost:5000/api/colleges");
+    const res = await axios.get("http://collegechale.onrender.com/api/colleges");
     setColleges(res.data);
   };
 
@@ -24,7 +24,7 @@ function AdminCollegeList() {
 
     if (!confirmDelete) return;
 
-    await axios.delete(`http://localhost:5000/api/colleges/${id}`);
+    await axios.delete(`http://collegechale.onrender.com/api/colleges/${id}`);
 
     fetchColleges();
   };
@@ -61,8 +61,8 @@ function AdminCollegeList() {
                   <img
                     src={
                       college.image.startsWith("/uploads")
-                        ? `http://localhost:5000${college.image}`
-                        : `http://localhost:5000/uploads/${college.image}`
+                        ? `http://collegechale.onrender.com${college.image}`
+                        : `http://collegechale.onrender.com/uploads/${college.image}`
                     }
                     className="college-img"
                   />

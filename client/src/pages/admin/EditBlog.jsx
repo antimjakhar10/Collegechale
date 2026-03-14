@@ -31,7 +31,7 @@ return text
 // fetch blog data
 const fetchBlog = async()=>{
 
-const res = await axios.get(`http://localhost:5000/api/blogs/${id}`);
+const res = await axios.get(`http://collegechale.onrender.com/api/blogs/${id}`);
 
 setTitle(res.data.title);
 setSlug(res.data.slug);
@@ -60,7 +60,7 @@ const formData = new FormData();
 
 formData.append("image",file);
 
-const res = await axios.post("http://localhost:5000/upload",formData);
+const res = await axios.post("http://collegechale.onrender.com/upload",formData);
 
 setImage(res.data.image);
 
@@ -72,7 +72,7 @@ const updateBlog = async(e)=>{
 
 e.preventDefault();
 
-await axios.put(`http://localhost:5000/api/blogs/${id}`,{
+await axios.put(`http://collegechale.onrender.com/api/blogs/${id}`,{
 
 title,
 slug,
@@ -112,7 +112,7 @@ return(
 
 {image && (
 <img
-src={`http://localhost:5000${image}`}
+src={`http://collegechale.onrender.com${image}`}
 style={{width:"200px",marginTop:"10px"}}
 />
 )}

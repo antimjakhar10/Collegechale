@@ -12,7 +12,7 @@ const [loading,setLoading] = useState(true);
 useEffect(()=>{
 
 axios
-.get("http://localhost:5000/api/bloguser/approved")
+.get("http://collegechale.onrender.com/api/bloguser/approved")
 .then(res=>{
 setBlogs(res.data);
 setLoading(false);
@@ -85,7 +85,7 @@ className="bg-white rounded-xl shadow hover:shadow-xl hover:-translate-y-1 trans
 >
 
 <img
-src={`http://localhost:5000${blog.image}`}
+src={`http://collegechale.onrender.com${blog.image}`}
 alt={blog.title}
 onError={(e)=>{
 e.target.src="https://via.placeholder.com/400x250";

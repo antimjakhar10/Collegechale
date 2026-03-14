@@ -35,7 +35,7 @@ const HomePage = () => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/colleges")
+    fetch("http://collegechale.onrender.com/api/colleges")
       .then((res) => res.json())
       .then((data) => setColleges(data));
   }, []);

@@ -14,15 +14,15 @@ if(!user){
 return <div>Please login again</div>;
 }
 
-fetch(`http://localhost:5000/api/blogs/user/${user.id}`)
+fetch(`http://collegechale.onrender.com/api/blogs/user/${user.id}`)
 .then(res=>res.json())
 .then(data=>setBlogs(data));
 
-fetch(`http://localhost:5000/api/enquiries/user/${user.id}`)
+fetch(`http://collegechale.onrender.com/api/enquiries/user/${user.id}`)
 .then(res=>res.json())
 .then(data=>setEnquiries(data));
 
-fetch(`http://localhost:5000/api/saved/user/${user.id}`)
+fetch(`http://collegechale.onrender.com/api/saved/user/${user.id}`)
 .then(res=>res.json())
 .then(data=>setSaved(data));
 

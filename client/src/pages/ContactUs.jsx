@@ -24,7 +24,7 @@ e.preventDefault();
 
 try{
 
-await axios.post("http://localhost:5000/api/contact",form);
+await axios.post("http://collegechale.onrender.com/api/contact",form);
 
 setSuccess("Message sent successfully!");
 

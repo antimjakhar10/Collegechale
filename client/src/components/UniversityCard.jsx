@@ -7,8 +7,8 @@ const navigate = useNavigate();
 
 const imageUrl = uni.image
 ? uni.image.startsWith("/uploads")
-  ? `http://localhost:5000${uni.image}`
-  : `http://localhost:5000/uploads/${uni.image}`
+  ? `http://collegechale.onrender.com${uni.image}`
+  : `http://collegechale.onrender.com/uploads/${uni.image}`
 : "https://via.placeholder.com/80";
 
 return (
@@ -84,7 +84,7 @@ alert("Login first");
 return;
 }
 
-await fetch("http://localhost:5000/api/saved/save",{
+await fetch("http://collegechale.onrender.com/api/saved/save",{
 
 method:"POST",
 headers:{

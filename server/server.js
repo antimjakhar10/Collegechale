@@ -21,7 +21,27 @@ const path = require("path");
 
 const app = express();
 
-app.use(cors());
+
+
+const allowedOrigins = [
+  "http://localhost:5173",
+  "http://localhost:3000",
+  "https://collegechale.com",
+  "https://www.collegechale.com"
+];
+
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true
+  })
+);
 app.use(express.json());
 
 app.get("/", (req, res) => {
@@ -37,7 +57,7 @@ cb(null,Date.now()+path.extname(file.originalname));
 
 const upload = multer({storage});
 
-app.use("/uploads", express.static("uploads"));
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 app.post("/upload", upload.single("image"), (req,res)=>{
 
