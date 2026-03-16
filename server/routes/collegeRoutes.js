@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const College = require("../models/College");
 
-
 // GET all colleges
 router.get("/", async (req, res) => {
   try {
@@ -13,7 +12,6 @@ router.get("/", async (req, res) => {
   }
 });
 
-
 // GET single college
 router.get("/:id", async (req, res) => {
   try {
@@ -23,7 +21,6 @@ router.get("/:id", async (req, res) => {
     res.status(500).json(err);
   }
 });
-
 
 // ADD college
 router.post("/add", async (req, res) => {
@@ -36,17 +33,16 @@ router.post("/add", async (req, res) => {
   }
 });
 
-
 // UPDATE college
 router.put("/:id", async (req, res) => {
   try {
-
     const data = req.body;
 
     const updatedCollege = await College.findByIdAndUpdate(
       req.params.id,
       {
         name: data.name,
+        type: data.type,
         url: data.url,
         location: data.location,
         streams: data.streams || [],
@@ -56,19 +52,17 @@ router.put("/:id", async (req, res) => {
         placements: data.placements || [],
         fees: data.fees || [],
         image: data.image,
-        images: data.images || []
+        images: data.images || [],
       },
-      { new: true }
+      { new: true },
     );
 
     res.json(updatedCollege);
-
   } catch (err) {
     console.log("UPDATE ERROR:", err);
-    res.status(500).json({message:"Update failed"});
+    res.status(500).json({ message: "Update failed" });
   }
 });
-
 
 // DELETE college
 router.delete("/:id", async (req, res) => {
@@ -79,6 +73,5 @@ router.delete("/:id", async (req, res) => {
     res.status(500).json(err);
   }
 });
-
 
 module.exports = router;

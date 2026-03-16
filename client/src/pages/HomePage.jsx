@@ -14,7 +14,6 @@ const steps = [
 ];
 
 const HomePage = () => {
-
   const [search, setSearch] = useState("");
   const [activeStep, setActiveStep] = useState(2);
   const [colleges, setColleges] = useState([]);
@@ -22,13 +21,19 @@ const HomePage = () => {
   const navigate = useNavigate();
 
   const handleSearch = () => {
-
     const college = colleges.find((c) =>
-      c.name.toLowerCase().includes(search.toLowerCase())
+      c.name.toLowerCase().includes(search.toLowerCase()),
     );
 
     if (college) {
-      navigate(`/college/${college.name.toLowerCase().replace(/\s+/g, "-")}`);
+      const slug = college.name.toLowerCase().replace(/\s+/g, "-");
+
+      const url =
+        college.type === "College"
+          ? `/colleges/${slug}`
+          : `/universities/${slug}`;
+
+      navigate(url);
     } else {
       alert("College not found");
     }
@@ -42,20 +47,17 @@ const HomePage = () => {
 
   return (
     <div className="relative">
-
       {/* HERO SECTION */}
       <div
-  className="relative h-[300px] md:h-[360px] pt-[110px] bg-cover bg-center flex items-center justify-center"
+        className="relative h-[300px] md:h-[360px] pt-[110px] bg-cover bg-center flex items-center justify-center"
         style={{
           backgroundImage: `url(${universityBg})`,
         }}
       >
         <div className="absolute inset-0 bg-black/60"></div>
 
-       <div className="relative z-10 w-full px-4 flex justify-center items-center">
-
+        <div className="relative z-10 w-full px-4 flex justify-center items-center">
           <div className="flex w-full max-w-3xl bg-white rounded-lg overflow-hidden shadow-2xl">
-
             <input
               type="text"
               value={search}
@@ -70,17 +72,13 @@ const HomePage = () => {
             >
               🔍
             </button>
-
           </div>
-
         </div>
       </div>
 
       {/* PROCESS SECTION */}
       <section className="py-12 md:py-20 bg-gray-100">
-
         <div className="max-w-6xl mx-auto text-center px-4">
-
           {/* Heading */}
           <h2 className="text-2xl md:text-4xl font-bold mb-4">
             Choosing the right college can be confusing
@@ -92,12 +90,9 @@ const HomePage = () => {
 
           {/* Steps Wrapper */}
           <div className="flex justify-center overflow-x-auto pb-4">
-
             <div className="flex items-center gap-4 md:gap-6 min-w-max">
-
               {steps.map((step, index) => (
                 <div key={index} className="flex items-center">
-
                   {/* Step Box */}
                   <div
                     onClick={() => setActiveStep(index)}
@@ -112,25 +107,18 @@ const HomePage = () => {
                       {index <= activeStep ? "✔" : "○"}
                     </span>
 
-                    <span className="font-medium">
-                      {step}
-                    </span>
+                    <span className="font-medium">{step}</span>
                   </div>
 
                   {/* Connector Line */}
                   {index !== steps.length - 1 && (
                     <div className="w-8 md:w-12 h-[2px] bg-gray-300"></div>
                   )}
-
                 </div>
               ))}
-
             </div>
-
           </div>
-
         </div>
-
       </section>
 
       <TopCourses
@@ -140,7 +128,6 @@ const HomePage = () => {
       />
 
       <StreamsSection />
-
     </div>
   );
 };

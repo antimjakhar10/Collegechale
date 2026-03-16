@@ -4,6 +4,7 @@ import HomePage from "./pages/HomePage";
 import CollegeDetails from "./pages/CollegeDetails";
 import Footer from "./components/Footer";
 import UniversityList from "./pages/UniversityList";
+import CollegeList from "./pages/CollegeList";
 import ContactUs from "./pages/ContactUs";
 
 import AdminLayout from "./pages/admin/AdminLayout";
@@ -42,15 +43,18 @@ function App() {
 
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/college/:id" element={<CollegeDetails />} />
         <Route path="/universities" element={<UniversityList />} />
+        <Route path="/universities/:id" element={<CollegeDetails />} />
+        <Route path="/colleges" element={<CollegeList />} />
+<Route path="/colleges/:id" element={<CollegeDetails />} />
+
         <Route path="/blogs" element={<BlogsPage />} />
         <Route path="/blog/:slug" element={<BlogDetail />} />
         <Route path="/submit-blog" element={<SubmitBlog />} />
         <Route path="/contact" element={<ContactUs />} />
 
         <Route path="/user/login" element={<UserLogin />} />
-        <Route path="/user/register" element={<UserRegister/>}/>
+        <Route path="/user/register" element={<UserRegister />} />
 
         <Route path="/user" element={<UserLayout />}>
           <Route path="dashboard" element={<UserDashboard />} />
@@ -60,7 +64,6 @@ function App() {
           <Route path="saved" element={<SavedColleges />} />
 
           <Route path="enquiries" element={<UserEnquiries />} />
-          
         </Route>
 
         <Route path="/admin-login" element={<AdminLogin />} />

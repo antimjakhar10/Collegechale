@@ -4,6 +4,7 @@ import axios from "axios";
 
 const CollegeDetails = () => {
   const { id } = useParams();
+const slug = id;
 
   const [college, setCollege] = useState(null);
   const [activeImage, setActiveImage] = useState(null);

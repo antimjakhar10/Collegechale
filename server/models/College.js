@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 
 const collegeSchema = new mongoose.Schema({
   name: String,
+  type: String,
   location: String,
  streams:[String],
   description: String,

@@ -11,12 +11,17 @@ const imageUrl = uni.image
   : `https://collegechale.onrender.com/uploads/${uni.image}`
 : "https://via.placeholder.com/80";
 
+const slug = uni.name.toLowerCase().replace(/\s+/g, "-");
+
+const url =
+  uni.type === "College"
+    ? `/colleges/${slug}`
+    : `/universities/${slug}`;
+
 return (
 
 <div
-onClick={() =>
-navigate(`/college/${uni.name.toLowerCase().replace(/\s+/g, "-")}`)
-}
+onClick={() => navigate(url)}
 className="bg-white border border-blue-200 rounded-xl p-6 flex flex-col md:flex-row md:items-center md:justify-between shadow hover:shadow-lg transition cursor-pointer gap-4"
 >
 
@@ -51,7 +56,7 @@ Apply Now
 <button
 onClick={(e)=>{
 e.stopPropagation();
-navigate(`/college/${uni.name.toLowerCase().replace(/\s+/g, "-")}`)
+navigate(url)
 }}
 className="bg-gray-200 px-5 py-2 rounded-md"
 >

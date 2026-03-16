@@ -53,6 +53,7 @@ setPlacements(res.data);
 
 const [college, setCollege] = useState({
 name: "",
+type: "University",
 location: "",
 streams: [],
 description: "",
@@ -264,6 +265,14 @@ src={`http://collegechale.onrender.com${college.image}`}
 className="logo-preview"
 />
 )}
+
+<div className="admin-form-group">
+<label>Type</label>
+<select name="type" value={college.type} onChange={handleChange}>
+<option value="University">University</option>
+<option value="College">College</option>
+</select>
+</div>
 
 <div className="admin-form-group">
 <label>Location</label>

@@ -19,6 +19,7 @@ function EditCollege() {
 
  const [college, setCollege] = useState({
 name: "",
+type: "",
 url: "",
 location: "",
 streams: [],
@@ -119,6 +120,7 @@ streams: [...college.streams, stream]
 
      setCollege({
 name: found.name || "",
+type: found.type || "",
 url: found.url || "",
 location: found.location || "",
 streams: found.streams || [],
@@ -220,8 +222,12 @@ try{
 console.log("Selected Placements:", selectedPlacements);
 
 const formattedData = {
-...college,
+name: college.name,
+type: college.type,   
+url: college.url,
+location: college.location,
 streams: college.streams,
+description: college.description,
 courses: selectedCourses,
 facilities: selectedFacilities,
 placements: placements
@@ -231,6 +237,7 @@ name: p.name,
 logo: p.logo
 })),
 fees: college.fees,
+image: college.image,
 images: college.images
 };
 
@@ -315,6 +322,14 @@ college.image?.startsWith("/uploads")
     </button>
   </div>
 )}
+
+<div className="admin-form-group">
+<label>Type</label>
+<select name="type" value={college.type} onChange={handleChange}>
+<option value="University">University</option>
+<option value="College">College</option>
+</select>
+</div>
 
 <div className="admin-form-group">
 <label>Location</label>

@@ -17,11 +17,12 @@ const StreamsSection = () => {
   const [activeStream, setActiveStream] = useState("View All");
   const [visibleCount, setVisibleCount] = useState(6);
 
-const filteredUniversities =
+ const filteredUniversities =
   activeStream === "View All"
     ? colleges
-    : colleges.filter((uni) => uni.stream === activeStream);
-
+    : colleges.filter((uni) =>
+        uni.streams?.includes(activeStream)
+      );
 
   useEffect(() => {
     fetch("https://collegechale.onrender.com/api/colleges")
@@ -30,8 +31,8 @@ const filteredUniversities =
   }, []);
 
   useEffect(() => {
-  setVisibleCount(6);
-}, [activeStream]);
+    setVisibleCount(6);
+  }, [activeStream]);
 
   return (
     <section className="py-20 bg-gray-50">
@@ -66,10 +67,14 @@ const filteredUniversities =
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredUniversities.slice(0, visibleCount).map((uni) => (
             <Link
-  key={uni._id}
-  to={`/college/${uni.name.toLowerCase().replace(/\s+/g,"-")}`}
-  className="block"
->
+              key={uni._id}
+              to={
+                uni.type === "College"
+                  ? `/colleges/${uni.name.toLowerCase().replace(/\s+/g, "-")}`
+                  : `/universities/${uni.name.toLowerCase().replace(/\s+/g, "-")}`
+              }
+              className="block"
+            >
               <div className="bg-white rounded-xl shadow hover:shadow-xl transition p-6">
                 <img
                   src={
@@ -85,9 +90,9 @@ const filteredUniversities =
 
                 <p className="text-sm text-gray-500 mb-2">📍 {uni.location}</p>
 
-               <p className="text-gray-600 text-sm mb-4 h-[44px] overflow-hidden leading-5">
-  {uni.description}
-</p>
+                <p className="text-gray-600 text-sm mb-4 h-[44px] overflow-hidden leading-5">
+                  {uni.description}
+                </p>
 
                 <span className="text-blue-900 font-medium">
                   View Details →
@@ -98,17 +103,15 @@ const filteredUniversities =
         </div>
 
         {visibleCount < filteredUniversities.length && (
-  <div className="text-center mt-10">
-    <button
-      onClick={() => setVisibleCount(visibleCount + 6)}
-      className="px-8 py-3 bg-blue-900 text-white rounded-md hover:bg-blue-800 transition"
-    >
-      Show More
-    </button>
-  </div>
-)}
-
-
+          <div className="text-center mt-10">
+            <button
+              onClick={() => setVisibleCount(visibleCount + 6)}
+              className="px-8 py-3 bg-blue-900 text-white rounded-md hover:bg-blue-800 transition"
+            >
+              Show More
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

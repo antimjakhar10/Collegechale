@@ -82,17 +82,11 @@ const Navbar = () => {
               University
             </Link>
 
-            <Link to="/" className="hover:text-green-500 transition">
+            <Link to="/colleges" className="hover:text-green-500 transition">
               College
             </Link>
 
-            <Link to="/" className="hover:text-green-500 transition">
-              Exam
-            </Link>
-
-            <Link to="/" className="hover:text-green-500 transition">
-              Courses
-            </Link>
+            
 
             <Link to="/blogs"  className="hover:text-green-500 transition">Blogs</Link>
 
@@ -120,17 +114,11 @@ const Navbar = () => {
       University
     </Link>
 
-    <Link to="/" onClick={() => setMenuOpen(false)}>
+    <Link to="/colleges" onClick={() => setMenuOpen(false)}>
       College
     </Link>
 
-    <Link to="/" onClick={() => setMenuOpen(false)}>
-      Exam
-    </Link>
-
-    <Link to="/" onClick={() => setMenuOpen(false)}>
-      Courses
-    </Link>
+    
 
     <Link to="/blogs" onClick={() => setMenuOpen(false)}>
       Blogs
