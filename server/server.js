@@ -27,7 +27,8 @@ const allowedOrigins = [
   "http://localhost:5173",
   "http://localhost:3000",
   "https://collegechale.com",
-  "https://www.collegechale.com"
+  "https://www.collegechale.com",
+  "https://collegechale.onrender.com"
 ];
 
 app.use(
