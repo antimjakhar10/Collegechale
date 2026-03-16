@@ -275,6 +275,28 @@ className="logo-preview"
 </div>
 
 <div className="admin-form-group">
+<label>Popular College</label>
+<input
+type="checkbox"
+checked={college.isPopular || false}
+onChange={(e)=>
+setCollege({...college,isPopular:e.target.checked})
+}
+/>
+</div>
+
+<div className="admin-form-group">
+<label>Top College</label>
+<input
+type="checkbox"
+checked={college.isTop || false}
+onChange={(e)=>
+setCollege({...college,isTop:e.target.checked})
+}
+/>
+</div>
+
+<div className="admin-form-group">
 <label>Location</label>
 <input name="location" onChange={handleChange} />
 </div>

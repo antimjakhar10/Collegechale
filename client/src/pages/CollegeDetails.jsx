@@ -4,7 +4,6 @@ import axios from "axios";
 
 const CollegeDetails = () => {
   const { id } = useParams();
-const slug = id;
 
   const [college, setCollege] = useState(null);
   const [activeImage, setActiveImage] = useState(null);
@@ -23,33 +22,32 @@ const slug = id;
     });
   };
 
- const handleSubmit = async () => {
+  const handleSubmit = async () => {
+    const user = JSON.parse(localStorage.getItem("user"));
 
-const user = JSON.parse(localStorage.getItem("user"));
+    await fetch("https://collegechale.onrender.com/api/enquiries/add", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        ...formData,
+        college: college.name,
+        userId: user?.id,
+      }),
+    });
 
-await fetch("https://collegechale.onrender.com/api/enquiries/add", {
-method:"POST",
-headers:{
-"Content-Type":"application/json"
-},
-body:JSON.stringify({
-...formData,
-college:college.name,
-userId:user?.id
-})
-});
-
-alert("Application submitted successfully");
-
-};
+    alert("Application submitted successfully");
+  };
 
   useEffect(() => {
     fetch("https://collegechale.onrender.com/api/colleges")
       .then((res) => res.json())
       .then((data) => {
-        const foundCollege = data.find(
-          (item) => item.name.toLowerCase().replace(/\s+/g, "-") === id,
-        );
+        const foundCollege = data.find((item) => {
+          const slug = item.name.toLowerCase().replace(/\s+/g, "-");
+          return slug === id;
+        });
         setCollege(foundCollege);
         setActiveImage(foundCollege?.images?.[0] || foundCollege?.image);
       });
@@ -134,7 +132,7 @@ alert("Application submitted successfully");
 
           {/* THUMBNAILS */}
           <div className="flex gap-3 flex-wrap">
-            {college.images.map((img, index) => (
+            {college?.images?.map((img, index) => (
               <img
                 key={index}
                 src={
@@ -212,24 +210,24 @@ ${activeImage === img ? "border-blue-600 scale-105" : "border-gray-300"}`}
             <h2 className="text-2xl font-bold mb-6">Top Recruiters</h2>
 
             <div className="flex flex-wrap gap-3">
-             {college?.placements?.length > 0 ? (
-college.placements.map((company, index) => (
-<div
-key={index}
-className="bg-white border rounded-lg px-4 py-2 flex items-center shadow-sm"
->
-<img
-src={`http://collegechale.onrender.com${company.logo}`}
-alt={company.name}
-className="h-8 object-contain"
-/>
-</div>
-))
-) : (
-<p className="text-gray-500">
-Placement information not available
-</p>
-)}
+              {college?.placements?.length > 0 ? (
+                college.placements.map((company, index) => (
+                  <div
+                    key={index}
+                    className="bg-white border rounded-lg px-4 py-2 flex items-center shadow-sm"
+                  >
+                    <img
+                      src={`http://collegechale.onrender.com${company.logo}`}
+                      alt={company.name}
+                      className="h-8 object-contain"
+                    />
+                  </div>
+                ))
+              ) : (
+                <p className="text-gray-500">
+                  Placement information not available
+                </p>
+              )}
             </div>
           </div>
 

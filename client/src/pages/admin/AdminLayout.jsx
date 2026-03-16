@@ -39,6 +39,7 @@ onClick={()=>setSidebarOpen(!sidebarOpen)}
 <Link to="/admin/contacts">
 Contact Enquiries
 </Link>
+<Link to="/admin/locations">Locations</Link>
 
 
 <div className="sidebar-bottom">

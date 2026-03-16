@@ -7,6 +7,7 @@ import UniversityList from "./pages/UniversityList";
 import CollegeList from "./pages/CollegeList";
 import ContactUs from "./pages/ContactUs";
 
+
 import AdminLayout from "./pages/admin/AdminLayout";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import AddCollege from "./pages/admin/AddCollege";
@@ -31,6 +32,7 @@ import UserBlogs from "./pages/user/UserBlogs";
 import SavedColleges from "./pages/user/SavedColleges";
 import UserEnquiries from "./pages/user/UserEnquiries";
 import UserRegister from "./pages/user/UserRegister";
+import AdminLocations from "./pages/admin/AdminLocations";
 
 function App() {
   const location = useLocation();
@@ -46,12 +48,13 @@ function App() {
         <Route path="/universities" element={<UniversityList />} />
         <Route path="/universities/:id" element={<CollegeDetails />} />
         <Route path="/colleges" element={<CollegeList />} />
-<Route path="/colleges/:id" element={<CollegeDetails />} />
+        <Route path="/colleges/:id" element={<CollegeDetails />} />
 
         <Route path="/blogs" element={<BlogsPage />} />
         <Route path="/blog/:slug" element={<BlogDetail />} />
         <Route path="/submit-blog" element={<SubmitBlog />} />
         <Route path="/contact" element={<ContactUs />} />
+        
 
         <Route path="/user/login" element={<UserLogin />} />
         <Route path="/user/register" element={<UserRegister />} />
@@ -80,6 +83,7 @@ function App() {
           <Route path="/admin/add-blog" element={<AddBlog />} />
           <Route path="/admin/edit-blog/:id" element={<EditBlog />} />
           <Route path="/admin/contacts" element={<AdminContact />} />
+          <Route path="/admin/locations" element={<AdminLocations/>}/>
         </Route>
       </Routes>
 

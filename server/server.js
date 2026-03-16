@@ -15,6 +15,7 @@ const contactRoutes = require("./routes/contactRoutes");
 const authRoutes = require("./routes/authRoutes");
 const savedRoutes = require("./routes/savedRoutes");
 const siteUserRoutes = require("./routes/siteUserRoutes");
+const megaMenuRoutes = require("./routes/megamenuRoutes");
 
 const multer = require("multer");
 const path = require("path");
@@ -87,6 +88,7 @@ app.use("/api/contact",contactRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/saved",savedRoutes);
 app.use("/api/siteusers",siteUserRoutes);
+app.use("/api/megamenu",megaMenuRoutes);
 
 const PORT = process.env.PORT || 5000;
 

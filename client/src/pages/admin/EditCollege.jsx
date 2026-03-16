@@ -30,6 +30,8 @@ placements: [],
 fees: [{ course: "", duration: "", amount: "" }],
 image: "",
 images: [],
+isPopular:false,
+isTop:false
 });
 
   useEffect(() => {
@@ -118,7 +120,7 @@ streams: [...college.streams, stream]
 
       const found = res.data;
 
-     setCollege({
+    setCollege({
 name: found.name || "",
 type: found.type || "",
 url: found.url || "",
@@ -131,6 +133,8 @@ fees: found.fees?.length
 : [{ course: "", duration: "", amount: "" }],
 image: found.image || "",
 images: found.images || [],
+isPopular: found.isPopular || false,
+isTop: found.isTop || false
 });
 
       setSelectedCourses(found.courses || []);
@@ -223,7 +227,7 @@ console.log("Selected Placements:", selectedPlacements);
 
 const formattedData = {
 name: college.name,
-type: college.type,   
+type: college.type,
 url: college.url,
 location: college.location,
 streams: college.streams,
@@ -238,7 +242,10 @@ logo: p.logo
 })),
 fees: college.fees,
 image: college.image,
-images: college.images
+images: college.images,
+
+isPopular: college.isPopular,
+isTop: college.isTop
 };
 
 console.log("DATA SENT:", formattedData);
@@ -329,6 +336,28 @@ college.image?.startsWith("/uploads")
 <option value="University">University</option>
 <option value="College">College</option>
 </select>
+</div>
+
+<div className="admin-form-group">
+<label>Popular College</label>
+<input
+type="checkbox"
+checked={college.isPopular}
+onChange={(e)=>
+setCollege({...college,isPopular:e.target.checked})
+}
+/>
+</div>
+
+<div className="admin-form-group">
+<label>Top College</label>
+<input
+type="checkbox"
+checked={college.isTop}
+onChange={(e)=>
+setCollege({...college,isTop:e.target.checked})
+}
+/>
 </div>
 
 <div className="admin-form-group">
